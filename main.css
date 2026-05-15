@@ -338,16 +338,10 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 40px;
-  animation: floatCake 2s ease-in-out infinite;
+  position: relative;
 }
 
-.candles {
-  display: flex;
-  gap: 10px;
-  margin-bottom: -10px;
-}
-
-.candles span {
+.candle {
   width: 8px;
   height: 35px;
   background: white;
@@ -355,8 +349,7 @@ body {
   position: relative;
 }
 
-.candles span::before {
-  content: "";
+.flame {
   position: absolute;
   top: -12px;
   left: 1px;
@@ -364,9 +357,10 @@ body {
   height: 12px;
   background: orange;
   border-radius: 50%;
-  animation: flame 0.5s infinite alternate;
+  animation: flicker 0.4s infinite alternate;
 }
 
+/* Cake layers */
 .cake-top,
 .cake-middle,
 .cake-bottom {
@@ -376,29 +370,76 @@ body {
   margin: 3px 0;
 }
 
-.cake-top {
-  background: #ffb6c1;
-}
+.cake-top { background: #ffb6c1; }
+.cake-middle { background: #ff69b4; }
+.cake-bottom { background: #ff1493; }
 
-.cake-middle {
-  background: #ff69b4;
-}
-
-.cake-bottom {
-  background: #ff1493;
-}
-
+/* Message */
 .cake-message {
   margin-top: 15px;
   font-size: 20px;
   font-weight: bold;
 }
 
-@keyframes flame {
-  from {
-    transform: scale(1);
+/* ✨ BURST EFFECT */
+.spark-layer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+.spark {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: gold;
+  border-radius: 50%;
+  animation: explode 1s ease-out forwards;
+}
+
+.spark {
+  transform: translate(0, 0);
+  animation: explode 1s ease-out forwards;
+}
+
+.spark {
+  --x: 0px;
+  --y: 0px;
+}
+
+.spark {
+  left: 0;
+  top: 0;
+  transform: translate(0, 0);
+  animation: explode 1s ease-out forwards;
+}
+
+.spark {
+  animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
     opacity: 1;
+    transform: translate(0, 0) scale(1);
   }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(0);
+  }
+}
+
+/* Cake glow when burst happens */
+.birthday-cake.burst {
+  filter: drop-shadow(0 0 20px gold);
+  transform: scale(1.02);
+}
+
+/* candle flame flicker */
+@keyframes flicker {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(1.3); opacity: 0.7; }
+}
 
   to {
     transform: scale(1.2);
