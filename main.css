@@ -333,30 +333,48 @@ body {
   display: block;
   border: 3px solid rgba(128, 128, 128, 0.15);
 }
+.section-cake {
+  z-index: 1;
+}
+
 .birthday-cake {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
   position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.birthday-cake:hover {
+  transform: scale(1.03);
+}
+
+.candles {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 4px;
 }
 
 .candle {
-  width: 8px;
-  height: 35px;
-  background: white;
+  width: 10px;
+  height: 38px;
+  background: linear-gradient(180deg, #fff 60%, #ffd6e0 100%);
   border-radius: 4px;
   position: relative;
 }
 
 .flame {
   position: absolute;
-  top: -12px;
-  left: 1px;
-  width: 6px;
-  height: 12px;
-  background: orange;
-  border-radius: 50%;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 14px;
+  background: radial-gradient(ellipse at 50% 80%, #fff700, #ff8c00, transparent);
+  border-radius: 50% 50% 30% 30%;
   animation: flicker 0.4s infinite alternate;
 }
 
@@ -438,13 +456,7 @@ body {
 /* candle flame flicker */
 @keyframes flicker {
   from { transform: scale(1); opacity: 1; }
-  to { transform: scale(1.3); opacity: 0.7; }
-}
-
-  to {
-    transform: scale(1.2);
-    opacity: 0.7;
-  }
+  to   { transform: scale(1.3); opacity: 0.7; }
 }
 
 @keyframes floatCake {
