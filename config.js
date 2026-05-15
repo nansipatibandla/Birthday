@@ -55,7 +55,7 @@ const CONFIG = {
   sections: [
     {
       type: "greeting",
-      title: "Hi",
+      title: "Hey Love ❤️",
     },
     {
       type: "countdown",
@@ -64,23 +64,24 @@ const CONFIG = {
     },
     {
       type: "announcement",
-      text: "It's your birthday!! :D",
+      text: "Guess what? :) ",
     },
     {
       type: "chatbox",
       message:
         "Happy birthday to youu!! Wishing you a wonderful year ahead filled with joy, love, and endless happiness!",
-      buttonText: "Send",
+      buttonText: "continue",
     },
     {
       type: "ideas",
       lines: [
-        "That's what I was going to do.",
-        "But then I stopped.",
-        "I realised, I wanted to do something <strong>special</strong>.",
-        "Because,",
-        "You are Special <span>:)</span>",
-      ],
+  "I thought of getting you flowers.",
+  "Then chocolates.",
+  "Then I realised...",
+  "Nothing is enough for someone like <strong>you</strong>.",
+  "So I chose to just <strong>love you</strong> with everything I have. <span>💖</span>",
+],
+    
       bigLetters: "SO",
     },
     {
@@ -93,9 +94,14 @@ const CONFIG = {
     },
     {
       type: "profile",
-      wishTitle: "Happy Birthday 🎂!",
+      wishTitle: "Happy Birthday",
     
     },
+    {
+  type: "cake",
+  candles: 5,
+  message: "Make a wish 🎂✨",
+},
     {
       type: "fireworks",
       count: 15,
